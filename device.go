@@ -26,8 +26,8 @@ func NewDevice(_deviceID string, _currentIP string, _revoked bool) (*Device, err
     return newDevice, nil
 }
 
-func PrintDevices(sysLogger *logger.Logger) {
-    for _, deviceObj := range DevicesByID {
+func PrintDevices(sysLogger *logger.Logger, devices map[string]*Device) {
+    for _, deviceObj := range devices {
         sysLogger.Infof("%v\n", deviceObj)
     }
 }
