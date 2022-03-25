@@ -31,3 +31,14 @@ func PrintDevices(sysLogger *logger.Logger, devices map[string]*Device) {
         sysLogger.Infof("%v\n", deviceObj)
     }
 }
+
+func FindDeviceByIPInIDMap(sysLogger *logger.Logger, ip string, devices map[string]*Device) *Device {
+    for _, device := range devices {
+        if device.CurrentIP == ip {
+            sysLogger.Debugf("attributes: FindDeviceByIPInMap(): device '%s' has currently IP addr '%s'", device.DeviceID, device.CurrentIP)
+            return device
+        }
+    }
+
+    return nil
+}
