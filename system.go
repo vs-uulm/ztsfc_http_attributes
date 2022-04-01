@@ -10,7 +10,7 @@ func NewEmptySystem() *System {
     return newSystem
 }
 
-func NewSystem(_threatLevel int) *System {
+func NewSystem(_threatLevel int64) *System {
     newSystem := new(System)
     // TODO: check if _threatLevel makes sense
     newSystem.ThreatLevel = _threatLevel
