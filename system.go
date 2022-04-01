@@ -1,16 +1,12 @@
 package attributes
 
-import (
-    logger "github.com/vs-uulm/ztsfc_http_logger"
-)
-
 type System struct {
     ThreatLevel int `json:"threatLevel"`
 }
 
 func NewEmptySystem() *System {
     newSystem := new(System)
-    ThreatLevel = 0
+    newSystem.ThreatLevel = 0
     return newSystem
 }
 
