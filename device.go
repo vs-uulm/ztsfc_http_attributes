@@ -14,7 +14,7 @@ func NewEmptyDevice() (*Device, error) {
     newDevice := new(Device)
     newDevice.DeviceID = ""
     newDevice.CurrentIP = ""
-    newDevice.Revoked = true
+    newDevice.Revoked = false
     return newDevice, nil
 }
 
