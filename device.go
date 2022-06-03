@@ -10,12 +10,12 @@ type Device struct {
     Revoked bool `json:"revoked"`
 }
 
-func NewEmptyDevice() (*Device, error) {
+func NewEmptyDevice() *Device {
     newDevice := new(Device)
     newDevice.DeviceID = ""
     newDevice.CurrentIP = ""
     newDevice.Revoked = false
-    return newDevice, nil
+    return newDevice
 }
 
 func NewDevice(_deviceID string, _currentIP string, _revoked bool) (*Device, error) {
