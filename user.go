@@ -22,7 +22,7 @@ func NewEmptyUser() *User {
     return newUser
 }
 
-func NewUser(_userID string, _usualTimeBegin, _usualTimeEnd time.Time, _usualServices []string) *User {
+func NewUser(_userID string, _usualTimeBegin, _usualTimeEnd int, _usualServices []string) *User {
     newUser := new(User)
     newUser.UserID = _userID
     newUser.UsualTimeBegin = _usualTimeBegin
