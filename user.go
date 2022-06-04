@@ -2,8 +2,6 @@ package attributes
 
 import (
     "time"
-
-    logger "github.com/vs-uulm/ztsfc_http_logger"
 )
 
 // TODO: Implement JSON comptible time; Implement Marhsaler Interface for that.
@@ -18,8 +16,8 @@ type User struct {
 func NewEmptyUser() *User {
     newUser := new(User)
     newUser.UserID = ""
-    newUser.UsualTimeBegin = time.Time{}
-    newUser.UsualTimeEnd = time.Time{}
+    newUser.UsualTimeBegin = time.Now()
+    newUser.UsualTimeEnd = time.Now()
     newUser.UsualServices = make([]string, 0)
     return newUser
 }
