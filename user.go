@@ -8,16 +8,16 @@ import (
 // See: https://stackoverflow.com/questions/23695479/how-to-format-timestamp-in-outgoing-json
 type User struct {
     UserID string `json:"userID"`
-    UsualTimeBegin int `json`
-    UsualTimeEnd int
-    UsualServices []string
+    UsualTimeBegin int `json:"usualTimeBegin"`
+    UsualTimeEnd int `json:"usualTimeEnd"`
+    UsualServices []string `json:"usualServices"`
 }
 
 func NewEmptyUser() *User {
     newUser := new(User)
     newUser.UserID = ""
-    newUser.UsualTimeBegin = time.Now()
-    newUser.UsualTimeEnd = time.Now()
+    newUser.UsualTimeBegin = 8
+    newUser.UsualTimeEnd = 16
     newUser.UsualServices = make([]string, 0)
     return newUser
 }
