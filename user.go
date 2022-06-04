@@ -1,9 +1,5 @@
 package attributes
 
-import (
-    "time"
-)
-
 // TODO: Implement JSON comptible time; Implement Marhsaler Interface for that.
 // See: https://stackoverflow.com/questions/23695479/how-to-format-timestamp-in-outgoing-json
 type User struct {
