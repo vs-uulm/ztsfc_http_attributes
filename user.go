@@ -3,11 +3,11 @@ package attributes
 // TODO: Implement JSON comptible time; Implement Marhsaler Interface for that.
 // See: https://stackoverflow.com/questions/23695479/how-to-format-timestamp-in-outgoing-json
 type User struct {
-    UserID string `json:"userID"`
-    FailedPWAuthentication int `json:"failedPWAuthentication"`
-    UsualTimeBegin int `json:"usualTimeBegin"`
-    UsualTimeEnd int `json:"usualTimeEnd"`
-    UsualServices []string `json:"usualServices"`
+    UserID string `json:"userID" yaml:"user_id"`
+    FailedPWAuthentication int `json:"failedPWAuthentication" yaml:"failed_pw_authentication"`
+    UsualTimeBegin int `json:"usualTimeBegin" yaml:"usual_time_begin"`
+    UsualTimeEnd int `json:"usualTimeEnd" yaml:"usual_time_end"`
+    UsualServices []string `json:"usualServices" yaml:"usual_services"`
 }
 
 func NewEmptyUser() *User {
