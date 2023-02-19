@@ -5,9 +5,9 @@ import (
 )
 
 type Device struct {
-    DeviceID string `json:"deviceID"`
-    CurrentIP string `json:"currentIP"`
-    Revoked bool `json:"revoked"`
+    DeviceID string `json:"deviceID" yaml:"device_id"`
+    CurrentIP string `json:"currentIP" yaml:"current_ip"`
+    Revoked bool `json:"revoked" yaml:"revoked"`
 }
 
 func NewEmptyDevice() *Device {

@@ -1,7 +1,7 @@
 package attributes
 
 type System struct {
-    ThreatLevel int64 `json:"threatLevel"`
+    ThreatLevel int64 `json:"threatLevel" yaml:"threat_level"`
 }
 
 func NewEmptySystem() *System {
