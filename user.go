@@ -8,6 +8,7 @@ type User struct {
     UsualTimeBegin int `json:"usualTimeBegin" yaml:"usual_time_begin"`
     UsualTimeEnd int `json:"usualTimeEnd" yaml:"usual_time_end"`
     UsualServices []string `json:"usualServices" yaml:"usual_services"`
+    AllowedServices []string `json:"allowedServices" yaml:"allowed_services"`
 }
 
 func NewEmptyUser() *User {
