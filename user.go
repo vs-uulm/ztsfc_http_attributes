@@ -34,7 +34,7 @@ func NewEmptyUser() *User {
 	return newUser
 }
 
-func NewUser(_userID string, _failedPWAuthentication int, _enterprisePresence bool, _usualTimeBegin, _usualTimeEnd, _usualAccessRate int,
+func NewUser(_userID string, _failedPWAuthentication int, _enterprisePresence bool, _usualTimeBegin, _usualTimeEnd, _usualAccessRate rate.Limit,
 	_usualServices, _allowedServices, _usualDevices []string, _trustHistory int) *User {
 	newUser := new(User)
 	newUser.UserID = _userID
