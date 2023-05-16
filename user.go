@@ -17,8 +17,6 @@ type User struct {
 	AllowedServices        []string   `json:"allowedServices" yaml:"allowed_services"`
 	UsualDevices           []string   `json:"usualDevices" yaml:"usual_devices"`
 	TrustHistory           int        `json:"trustHistory" yaml:"trust_history"`
-
-	UsualAccessRateLimiter *rate.Limiter
 }
 
 func NewEmptyUser() *User {
@@ -33,7 +31,6 @@ func NewEmptyUser() *User {
 	newUser.AllowedServices = make([]string, 0)
 	newUser.UsualDevices = make([]string, 0)
 	newUser.TrustHistory = 0
-	newUser.UsualAccessRateLimiter = rate.NewLimiter(newUser.UsualAcessRate, newUser.UsualAcessRate)
 	return newUser
 }
 
@@ -50,6 +47,5 @@ func NewUser(_userID string, _failedPWAuthentication int, _enterprisePresence bo
 	newUser.AllowedServices = _allowedServices
 	newUser.UsualDevices = _usualDevices
 	newUser.TrustHistory = _trustHistory
-	newUser.UsualAccessRateLimiter = rate.NewLimiter(newUser.UsualAcessRate, newUser.UsualAcessRate)
 	return newUser
 }
