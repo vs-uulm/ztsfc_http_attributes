@@ -7,6 +7,7 @@ import (
 type Device struct {
 	DeviceID           string   `json:"deviceID" yaml:"device_id"`
 	CurrentIP          string   `json:"currentIP" yaml:"current_ip"`
+	Fingerprint        string   `json:"fingerprint" yaml:"fingerprint"`
 	Revoked            bool     `json:"revoked" yaml:"revoked"`
 	EnterprisePresence bool     `json:"enterprisePresence" yaml:"enterprise_presence"`
 	UsualServices      []string `json:"usualServices" yaml:"usual_services"`
@@ -18,6 +19,7 @@ func NewEmptyDevice() *Device {
 	newDevice := new(Device)
 	newDevice.DeviceID = ""
 	newDevice.CurrentIP = ""
+	newDevice.Fingerprint = ""
 	newDevice.Revoked = false
 	newDevice.EnterprisePresence = false
 	newDevice.UsualServices = make([]string, 0)
@@ -26,11 +28,12 @@ func NewEmptyDevice() *Device {
 	return newDevice
 }
 
-func NewDevice(_deviceID string, _currentIP string, _revoked bool, _enterprisePresence bool, _usualServices, _usualUser []string,
+func NewDevice(_deviceID string, _currentIP string, _fingerprint string, _revoked bool, _enterprisePresence bool, _usualServices, _usualUser []string,
 	_trustHistory int) (*Device, error) {
 	newDevice := new(Device)
 	newDevice.DeviceID = _deviceID
 	newDevice.CurrentIP = _currentIP
+	newDevice.Fingerprint = _fingerprint
 	newDevice.Revoked = _revoked
 	newDevice.EnterprisePresence = _enterprisePresence
 	newDevice.UsualServices = _usualServices
