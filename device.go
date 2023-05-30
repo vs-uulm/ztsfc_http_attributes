@@ -13,6 +13,7 @@ type Device struct {
 	EnterprisePresence bool     `json:"enterprisePresence" yaml:"enterprise_presence"`
 	UsualServices      []string `json:"usualServices" yaml:"usual_services"`
 	UsualUser          []string `json:"usualUser" yaml:"usual_user"`
+	Type               string   `json:"type" yaml:"type"`
 	TrustHistory       int      `json:"trustHistory" yaml:"trust_history"`
 }
 
@@ -26,12 +27,13 @@ func NewEmptyDevice() *Device {
 	newDevice.EnterprisePresence = false
 	newDevice.UsualServices = make([]string, 0)
 	newDevice.UsualUser = make([]string, 0)
+	newDevice.Type = ""
 	newDevice.TrustHistory = 0
 	return newDevice
 }
 
 func NewDevice(_deviceID string, _failedAuthAttempts int, _currentIP string, _fingerprint string, _revoked bool, _enterprisePresence bool, _usualServices, _usualUser []string,
-	_trustHistory int) (*Device, error) {
+	_type string, _trustHistory int) (*Device, error) {
 	newDevice := new(Device)
 	newDevice.DeviceID = _deviceID
 	newDevice.FailedAuthAttempts = _failedAuthAttempts
@@ -41,6 +43,7 @@ func NewDevice(_deviceID string, _failedAuthAttempts int, _currentIP string, _fi
 	newDevice.EnterprisePresence = _enterprisePresence
 	newDevice.UsualServices = _usualServices
 	newDevice.UsualUser = _usualUser
+	newDevice.Type = _type
 	newDevice.TrustHistory = _trustHistory
 	return newDevice, nil
 }
